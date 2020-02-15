@@ -1,0 +1,31 @@
+1.SELECT * FROM Customers
+WHERE Country= 'USA';
+
+2.SELECT CustomerName,City,Country FROM Customers
+WHERE CustomerName Like 'a%';
+
+3.SELECT * FROM Employees
+WHERE BirthDate between '01-01-1930' and '31-12-1950';
+
+4.SELECT * FROM Employees
+WHERE Notes like '%BA%' or Notes like'%BSC%' or Notes like '%BTS degrees%'; 
+
+5.SELECT orderID, productID
+from Orderdetails
+Order By  ProductID desc;
+
+6.SELECT * FROM [Products]
+where Unit like '%bottles%' OR PRICE>9; 
+
+7.SELECT CategoryID,count(productID)	
+FROM Products
+group BY CategoryID;
+
+8.SELECT Country, count(customerID)
+FROM Customers 
+group by country
+having count(customerID)>6;
+
+9.SELECT orderId, productname, price*quantity
+from orderDetails, products
+WHERE Products.ProductID=OrderDetails.ProductID;
